@@ -6,28 +6,72 @@
   font-size: 5em;
   text-align: center;
   height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
+  grid-template-areas:
+    "head head head"
+    "nav article ads"
+    "nav article2 ads"
+    "footer footer footer"
+  ;
 }
 
 #header {
   background-color: #f3ca40;
+  grid-area: head;
 }
 
 #nav {
   background-color: #4b4e6d;
+  grid-area: nav;
 }
 
 #article-1 {
   background-color: #6a8d92;
+  grid-area: article;
 }
 
 #article-2 {
   background-color: yellow;
+  grid-area: article2; 
 }
 
 #ads {
   background-color: #f2a541;
+  grid-area: ads;
 }
 
 #footer {
   background-color: #f08a4b;
+  grid-area: footer;
+}
+
+@media (max-width: 1100px){
+  #app{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr 2fr 1fr;
+    grid-template-areas:
+      "head head"
+      "nav nav"
+      "article ads"
+      "article2 ads"
+      "footer footer"
+    ;
+  }
+}
+
+@media (max-width: 500px){
+  #app{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 2fr 1fr 2fr 1fr;
+    grid-template-areas:
+      "head"
+      "nav"
+      "article"
+      "ads"
+      "article2"
+      "footer"
+    ;
+  }
 }
